@@ -8,10 +8,12 @@ import { Component, OnInit } from '@angular/core';
 export class TodoListComponent implements OnInit {
   todos: object[];
   todoTitle: string;
+  nextId: number;
 
   constructor() { }
 
   ngOnInit() {
+    this.nextId = 4;
     this.todoTitle = '';
     this.todos = [
       {
@@ -35,12 +37,22 @@ export class TodoListComponent implements OnInit {
     ];
   }
 
-  addTodo() {
+  addTodo(): void {
+    if(this.todoTitle.trim().length === 0)
+      return;
+
     this.todos.push({
-      id: 4,
+      id: this.nextId,
       title: this.todoTitle,
       completed: false,
       editing: false
     });
+
+      this.todoTitle = '';
+      this.nextId++;
+    }
+
+  deleteTodo(id: number): void {
+    this.todos = this.todos.filter(todo => todo.id !== id)
   }
 }

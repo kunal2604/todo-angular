@@ -16,6 +16,7 @@ import { TodoListComponent } from './components/todo-list/todo-list.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    AutofocusModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -16,8 +16,10 @@
     </div>
 </div>
 
+<hr>
+
 <div class="extra-container">
-    <div class="extra-container-c1"><label><input type="checkbox">Check all</label></div>
+    <div class="extra-container-c1"><label><input type="checkbox" (change)="checkAllTodos()">Check all</label></div>
     <div class="extra-container-c2"> {{ remaining() }} items left</div>
 </div>
 
@@ -27,7 +29,7 @@
         <button>Active</button>
         <button>Completed</button>
     </div>
-    <div>
-        <button>Clear Completed</button>
+    <div *ngIf="atleastOneCompleted()">
+        <button (click)="clearCompleted()">Clear Completed</button>
     </div>
 </div>

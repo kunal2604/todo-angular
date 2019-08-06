@@ -40,3 +40,16 @@
     color: green;
     text-decoration: line-through;
 }
+
+.extra-container {
+    display: flex;
+    align-content: space-around;
+}
+
+.extra-container-c1 {
+    width: 50%;
+}
+.extra-container-c2 {
+    text-align: right;
+    width: 50%;
+}
